@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * FLAIS default status object.
  */
 @Getter
 @Setter

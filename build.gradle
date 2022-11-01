@@ -10,7 +10,6 @@ plugins {
 }
 
 group = 'no.fintlabs.no'
-version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
 configurations {
@@ -53,6 +52,7 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
+    //testImplementation 'io.fabric8:crd-generator-apt:6.2.0'
     testImplementation 'cglib:cglib-nodep:3.3.0'
     testImplementation 'org.spockframework:spock-spring:2.3-groovy-3.0'
     testImplementation 'org.spockframework:spock-core:2.3-groovy-3.0'

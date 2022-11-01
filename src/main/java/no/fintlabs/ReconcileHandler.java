@@ -7,7 +7,11 @@ import io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconci
 import java.util.ArrayList;
 import java.util.List;
 
+// TODO: 01/11/2022 This should probably be moved the the FlaisReconciler class.
+
 /**
+ * FLAIS default reconcile behavior.
+ *
  * @param <S> Status object
  * @param <R> Custom resource definition
  * @param <T> Spec object

@@ -7,9 +7,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Utility class to use for validating FLAIS mandatory CRD setup.
+ */
 @Slf4j
 public class CrdValidator {
 
+    /**
+     * List of mandatory labels.
+     */
     public static List<String> MANDATORY_LABELS = Arrays.asList(
             "app.kubernetes.io/name",
             "app.kubernetes.io/instance",
@@ -18,6 +24,13 @@ public class CrdValidator {
             "app.kubernetes.io/part-of",
             "fintlabs.no/team");
 
+    /**
+     * Checks if the CRD has all the mandatory labels set.
+     *
+     * @param crd The CRD to validate
+     *
+     * @throws IllegalArgumentException is thrown if any mandatory labels is missing.
+     */
     public static void validate(HasMetadata crd) {
         log.debug("Validating CRD");
         List<String> missingLabels = new ArrayList<>(MANDATORY_LABELS);

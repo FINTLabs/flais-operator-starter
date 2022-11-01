@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * Extending this class will give you the default FLAIS reconiler behavior.
+ *
  * @param <T> the class representing the CustomResource object
  * @param <S> the class providing the {@code Spec} part of this CustomResource
  */
