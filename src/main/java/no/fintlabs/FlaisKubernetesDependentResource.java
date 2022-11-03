@@ -33,9 +33,9 @@ public abstract class FlaisKubernetesDependentResource<T extends HasMetadata, C 
     }
 
     // TODO: 18/10/2022 Need to improve matching
-    @Override
-    public Matcher.Result<T> match(T actualResource, C primary, Context<C> context) {
-        final var desiredSecretName = primary.getMetadata().getName();
-        return Matcher.Result.nonComputed(actualResource.getMetadata().getName().equals(desiredSecretName));
-    }
+//    @Override
+//    public Matcher.Result<T> match(T actualResource, C primary, Context<C> context) {
+//        final var desiredSecretName = primary.getMetadata().getName();
+//        return Matcher.Result.nonComputed(actualResource.getMetadata().getName().equals(desiredSecretName));
+//    }
 }
