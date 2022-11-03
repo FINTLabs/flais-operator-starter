@@ -144,17 +144,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#dependsOn(io.javaoperatorsdk.operator.api.reconciler.dependent.DependentResource...)" class="member-name-link">dependsOn</a><wbr>(io.javaoperatorsdk.operator.api.reconciler.dependent.DependentResource...&nbsp;dependentResources)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>io.javaoperatorsdk.operator.processing.dependent.Matcher.Result&lt;<a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">T</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#match(T,C,io.javaoperatorsdk.operator.api.reconciler.Context)" class="member-name-link">match</a><wbr>(<a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">T</a>&nbsp;actualResource,
- <a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">C</a>&nbsp;primary,
- io.javaoperatorsdk.operator.api.reconciler.Context&lt;<a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">C</a>&gt;&nbsp;context)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-io.javaoperatorsdk.operator.processing.dependent.kubernetes.KubernetesDependentResource">Methods inherited from class&nbsp;io.javaoperatorsdk.operator.processing.dependent.kubernetes.KubernetesDependentResource</h3>
-<code>addOwnerReference, configureWith, configureWith, create, createEventSource, delete, desired, getKubernetesClient, getSecondaryResource, handleCreate, handleUpdate, prepare, resourceType, setKubernetesClient, update</code></div>
+<code>addOwnerReference, configureWith, configureWith, create, createEventSource, delete, desired, getKubernetesClient, getSecondaryResource, handleCreate, handleUpdate, match, prepare, resourceType, setKubernetesClient, update</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-io.javaoperatorsdk.operator.processing.dependent.AbstractEventSourceHolderDependentResource">Methods inherited from class&nbsp;io.javaoperatorsdk.operator.processing.dependent.AbstractEventSourceHolderDependentResource</h3>
 <code>applyFilters, eventSource, initEventSource, onCreated, onUpdated, setEventSource, setOnAddFilter, setOnDeleteFilter, setOnUpdateFilter</code></div>
@@ -172,7 +167,7 @@ loadScripts(document, 'script');</script>
 <code>delete</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-io.javaoperatorsdk.operator.processing.dependent.Updater">Methods inherited from interface&nbsp;io.javaoperatorsdk.operator.processing.dependent.Updater</h3>
-<code>update</code></div>
+<code>match, update</code></div>
 </section>
 </li>
 </ul>
@@ -204,20 +199,6 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="dependsOn(io.javaoperatorsdk.operator.api.reconciler.dependent.DependentResource...)">
 <h3>dependsOn</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">dependsOn</span><wbr><span class="parameters">(io.javaoperatorsdk.operator.api.reconciler.dependent.DependentResource...&nbsp;dependentResources)</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="match(T,C,io.javaoperatorsdk.operator.api.reconciler.Context)">
-<h3 id="match(io.fabric8.kubernetes.api.model.HasMetadata,no.fintlabs.FlaisCrd,io.javaoperatorsdk.operator.api.reconciler.Context)">match</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">io.javaoperatorsdk.operator.processing.dependent.Matcher.Result&lt;<a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">T</a>&gt;</span>&nbsp;<span class="element-name">match</span><wbr><span class="parameters">(<a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">T</a>&nbsp;actualResource,
- <a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">C</a>&nbsp;primary,
- io.javaoperatorsdk.operator.api.reconciler.Context&lt;<a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">C</a>&gt;&nbsp;context)</span></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code>match</code>&nbsp;in interface&nbsp;<code>io.javaoperatorsdk.operator.processing.dependent.Updater&lt;<a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">T</a> extends io.fabric8.kubernetes.api.model.HasMetadata,<wbr><a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">C</a> extends <a href="FlaisCrd.html" title="class in no.fintlabs">FlaisCrd</a>&lt;<a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">S</a>&gt;&gt;</code></dd>
-<dt>Overrides:</dt>
-<dd><code>match</code>&nbsp;in class&nbsp;<code>io.javaoperatorsdk.operator.processing.dependent.kubernetes.KubernetesDependentResource&lt;<a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">T</a> extends io.fabric8.kubernetes.api.model.HasMetadata,<wbr><a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">C</a> extends <a href="FlaisCrd.html" title="class in no.fintlabs">FlaisCrd</a>&lt;<a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">S</a>&gt;&gt;</code></dd>
-</dl>
 </section>
 </li>
 </ul>
