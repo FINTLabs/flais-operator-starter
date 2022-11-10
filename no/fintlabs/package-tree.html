@@ -55,22 +55,22 @@ loadScripts(document, 'script');</script>
 <ul>
 <li class="circle">io.javaoperatorsdk.operator.processing.dependent.AbstractDependentResource&lt;R,<wbr>P&gt; (implements io.javaoperatorsdk.operator.api.reconciler.dependent.DependentResource&lt;R,<wbr>P&gt;)
 <ul>
-<li class="circle">io.javaoperatorsdk.operator.processing.dependent.AbstractEventSourceHolderDependentResource&lt;R,<wbr>P,<wbr>T&gt; (implements io.javaoperatorsdk.operator.api.reconciler.dependent.EventSourceProvider&lt;P&gt;)
+<li class="circle">io.javaoperatorsdk.operator.processing.dependent.AbstractEventSourceHolderDependentResource&lt;R,<wbr>P,<wbr>T&gt; (implements io.javaoperatorsdk.operator.api.reconciler.dependent.EventSourceReferencer&lt;P&gt;)
 <ul>
-<li class="circle">io.javaoperatorsdk.operator.processing.dependent.external.AbstractCachingDependentResource&lt;R,<wbr>P&gt;
+<li class="circle">io.javaoperatorsdk.operator.processing.dependent.AbstractExternalDependentResource&lt;R,<wbr>P,<wbr>T&gt;
 <ul>
 <li class="circle">io.javaoperatorsdk.operator.processing.dependent.external.AbstractPollingDependentResource&lt;R,<wbr>P&gt; (implements io.javaoperatorsdk.operator.processing.event.source.CacheKeyMapper&lt;R&gt;)
 <ul>
 <li class="circle">io.javaoperatorsdk.operator.processing.dependent.external.PerResourcePollingDependentResource&lt;R,<wbr>P&gt; (implements io.javaoperatorsdk.operator.processing.event.source.polling.PerResourcePollingEventSource.ResourceFetcher&lt;R,<wbr>P&gt;)
 <ul>
-<li class="circle">no.fintlabs.<a href="FlaisExternalDependentResource.html" class="type-name-link" title="class in no.fintlabs">FlaisExternalDependentResource</a>&lt;T,<wbr>C,<wbr>S&gt; (implements io.javaoperatorsdk.operator.processing.dependent.Creator&lt;R,<wbr>P&gt;, io.javaoperatorsdk.operator.api.reconciler.dependent.Deleter&lt;P&gt;, io.javaoperatorsdk.operator.api.reconciler.dependent.EventSourceProvider&lt;P&gt;)</li>
+<li class="circle">no.fintlabs.<a href="FlaisExternalDependentResource.html" class="type-name-link" title="class in no.fintlabs">FlaisExternalDependentResource</a>&lt;T,<wbr>C,<wbr>S&gt; (implements io.javaoperatorsdk.operator.processing.dependent.Creator&lt;R,<wbr>P&gt;, io.javaoperatorsdk.operator.api.reconciler.dependent.Deleter&lt;P&gt;)</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="circle">io.javaoperatorsdk.operator.processing.dependent.kubernetes.KubernetesDependentResource&lt;R,<wbr>P&gt; (implements io.javaoperatorsdk.operator.api.reconciler.dependent.managed.DependentResourceConfigurator&lt;C&gt;, io.javaoperatorsdk.operator.api.reconciler.dependent.managed.KubernetesClientAware)
+<li class="circle">io.javaoperatorsdk.operator.processing.dependent.kubernetes.KubernetesDependentResource&lt;R,<wbr>P&gt; (implements io.javaoperatorsdk.operator.api.reconciler.dependent.managed.AnnotationDependentResourceConfigurator&lt;A,<wbr>C&gt;, io.javaoperatorsdk.operator.api.reconciler.dependent.managed.KubernetesClientAware)
 <ul>
 <li class="circle">io.javaoperatorsdk.operator.processing.dependent.kubernetes.CRUDKubernetesDependentResource&lt;R,<wbr>P&gt; (implements io.javaoperatorsdk.operator.processing.dependent.Creator&lt;R,<wbr>P&gt;, io.javaoperatorsdk.operator.api.reconciler.dependent.GarbageCollected&lt;P&gt;, io.javaoperatorsdk.operator.processing.dependent.Updater&lt;R,<wbr>P&gt;)
 <ul>
