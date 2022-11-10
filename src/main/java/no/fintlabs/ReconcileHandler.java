@@ -19,13 +19,13 @@ import java.util.List;
 public interface ReconcileHandler<S extends FlaisStatus, R extends FlaisCrd<T>, T extends FlaisSpec> {
 
     default boolean hasUpdates(WorkflowReconcileResult reconcile) {
-        return reconcile.getReconcileResults().values().stream().map(reconcileResult -> reconcileResult.getOperation().name())
+        return reconcile.getReconcileResults().values().stream().map(reconcileResult -> reconcileResult.getSingleOperation().name())
                 .filter(s -> s.equals(ReconcileResult.Operation.NONE.name()))
                 .count() != reconcile.getReconciledDependents().size();
     }
 
     default boolean isCreated(WorkflowReconcileResult reconcile) {
-        return reconcile.getReconcileResults().values().stream().map(reconcileResult -> reconcileResult.getOperation().name())
+        return reconcile.getReconcileResults().values().stream().map(reconcileResult -> reconcileResult.getSingleOperation().name())
                 .filter(s -> s.equals(ReconcileResult.Operation.CREATED.name()))
                 .count() == reconcile.getReconciledDependents().size();
     }
@@ -33,7 +33,7 @@ public interface ReconcileHandler<S extends FlaisStatus, R extends FlaisCrd<T>, 
     default S createStatus(WorkflowReconcileResult reconcile, S status) {
         List<String> results = new ArrayList<>();
         reconcile.getReconcileResults()
-                .forEach((dependentResource, reconcileResult) -> results.add(dependentResource.resourceType().getSimpleName() + " -> " + reconcileResult.getOperation().name()));
+                .forEach((dependentResource, reconcileResult) -> results.add(dependentResource.resourceType().getSimpleName() + " -> " + reconcileResult.getSingleOperation().name()));
         status.setDependentResourceStatus(results);
 
         return status;

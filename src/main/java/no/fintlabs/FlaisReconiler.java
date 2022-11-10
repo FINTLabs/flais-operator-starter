@@ -2,7 +2,7 @@ package no.fintlabs;
 
 import io.javaoperatorsdk.operator.api.reconciler.*;
 import io.javaoperatorsdk.operator.api.reconciler.dependent.Deleter;
-import io.javaoperatorsdk.operator.api.reconciler.dependent.EventSourceProvider;
+import io.javaoperatorsdk.operator.api.reconciler.dependent.DependentResource;
 import io.javaoperatorsdk.operator.processing.dependent.workflow.Workflow;
 import io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult;
 import io.javaoperatorsdk.operator.processing.event.source.EventSource;
@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * Extending this class will give you the default FLAIS reconiler behavior.
@@ -23,15 +24,14 @@ public abstract class FlaisReconiler<T extends FlaisCrd<S>, S extends FlaisSpec>
         Cleaner<T>,
         ErrorStatusHandler<T>,
         EventSourceInitializer<T>,
-        ReconcileHandler<FlaisStatus, T, S>
-{
+        ReconcileHandler<FlaisStatus, T, S> {
 
     private final FlaisWorkflow<T, S> workflow;
-    private final List<? extends EventSourceProvider<T>> eventSourceProviders;
+    private final List<? extends DependentResource<?, T>> eventSourceProviders;
     private final List<? extends Deleter<T>> deleters;
 
     public FlaisReconiler(FlaisWorkflow<T, S> workflow,
-                          List<? extends EventSourceProvider<T>> eventSourceProviders,
+                          List<? extends DependentResource<?, T>> eventSourceProviders,
                           List<? extends Deleter<T>> deleters) {
         this.workflow = workflow;
         this.eventSourceProviders = eventSourceProviders;
@@ -70,7 +70,9 @@ public abstract class FlaisReconiler<T extends FlaisCrd<S>, S extends FlaisSpec>
     public Map<String, EventSource> prepareEventSources(EventSourceContext<T> context) {
         EventSource[] eventSources = eventSourceProviders
                 .stream()
-                .map(dr -> dr.initEventSource(context))
+                .map(dr -> dr.eventSource(context))
+                // TODO: 10/11/2022 Improve exception handling
+                .map(Optional::orElseThrow)
                 .toArray(EventSource[]::new);
         return EventSourceInitializer.nameEventSources(eventSources);
     }

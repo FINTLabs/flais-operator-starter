@@ -49,12 +49,11 @@ dependencyManagement {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
 
-    api "io.javaoperatorsdk:operator-framework-spring-boot-starter:3.2.0"
+    api "io.javaoperatorsdk:operator-framework-spring-boot-starter:4.1.1"
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
-    //testImplementation 'io.fabric8:crd-generator-apt:6.2.0'
     testImplementation 'cglib:cglib-nodep:3.3.0'
     testImplementation 'org.spockframework:spock-spring:2.3-groovy-3.0'
     testImplementation 'org.spockframework:spock-core:2.3-groovy-3.0'
