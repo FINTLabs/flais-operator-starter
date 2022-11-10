@@ -68,7 +68,7 @@ public class FileShareWorkflow extends FlaisWorkflow<FileShareCrd, FileShareSpec
 public class FileShareReconiler extends FlaisReconiler<FileShareCrd, FileShareSpec> {
 
     public FileShareReconiler(FileShareWorkflow workflow,
-                              List<? extends EventSourceProvider<FileShareCrd>> eventSourceProviders,
+                              List<? extends DependentResource<?, FileShareCrd>> eventSourceProviders,
                               List<? extends Deleter<FileShareCrd>> deleters) {
         super(workflow, eventSourceProviders, deleters);
     }
