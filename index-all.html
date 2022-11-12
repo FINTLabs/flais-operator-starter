@@ -59,7 +59,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="no/fintlabs/CrdValidator.html#%3Cinit%3E()" class="member-name-link">CrdValidator()</a> - Constructor for class no.fintlabs.<a href="no/fintlabs/CrdValidator.html" title="class in no.fintlabs">CrdValidator</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="no/fintlabs/ReconcileHandler.html#createStatus(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult,S)" class="member-name-link">createStatus(WorkflowReconcileResult, S)</a> - Method in interface no.fintlabs.<a href="no/fintlabs/ReconcileHandler.html" title="interface in no.fintlabs">ReconcileHandler</a></dt>
+<dt><a href="no/fintlabs/FlaisReconiler.html#createStatus(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult,no.fintlabs.FlaisStatus)" class="member-name-link">createStatus(WorkflowReconcileResult, FlaisStatus)</a> - Method in class no.fintlabs.<a href="no/fintlabs/FlaisReconiler.html" title="class in no.fintlabs">FlaisReconiler</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:D">D</h2>
@@ -127,14 +127,14 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:H">H</h2>
 <dl class="index">
-<dt><a href="no/fintlabs/ReconcileHandler.html#hasUpdates(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult)" class="member-name-link">hasUpdates(WorkflowReconcileResult)</a> - Method in interface no.fintlabs.<a href="no/fintlabs/ReconcileHandler.html" title="interface in no.fintlabs">ReconcileHandler</a></dt>
+<dt><a href="no/fintlabs/FlaisReconiler.html#hasUpdates(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult)" class="member-name-link">hasUpdates(WorkflowReconcileResult)</a> - Method in class no.fintlabs.<a href="no/fintlabs/FlaisReconiler.html" title="class in no.fintlabs">FlaisReconiler</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:I">I</h2>
 <dl class="index">
 <dt><a href="no/fintlabs/FlaisCrd.html#initStatus()" class="member-name-link">initStatus()</a> - Method in class no.fintlabs.<a href="no/fintlabs/FlaisCrd.html" title="class in no.fintlabs">FlaisCrd</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="no/fintlabs/ReconcileHandler.html#isCreated(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult)" class="member-name-link">isCreated(WorkflowReconcileResult)</a> - Method in interface no.fintlabs.<a href="no/fintlabs/ReconcileHandler.html" title="interface in no.fintlabs">ReconcileHandler</a></dt>
+<dt><a href="no/fintlabs/FlaisReconiler.html#isCreated(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult)" class="member-name-link">isCreated(WorkflowReconcileResult)</a> - Method in class no.fintlabs.<a href="no/fintlabs/FlaisReconiler.html" title="class in no.fintlabs">FlaisReconiler</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:M">M</h2>
@@ -158,10 +158,6 @@ loadScripts(document, 'script');</script>
 <dl class="index">
 <dt><a href="no/fintlabs/FlaisReconiler.html#reconcile(T,io.javaoperatorsdk.operator.api.reconciler.Context)" class="member-name-link">reconcile(T, Context&lt;T&gt;)</a> - Method in class no.fintlabs.<a href="no/fintlabs/FlaisReconiler.html" title="class in no.fintlabs">FlaisReconiler</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="no/fintlabs/ReconcileHandler.html" class="type-name-link" title="interface in no.fintlabs">ReconcileHandler</a>&lt;<a href="no/fintlabs/ReconcileHandler.html" title="type parameter in ReconcileHandler">S</a> extends <a href="no/fintlabs/FlaisStatus.html" title="class in no.fintlabs">FlaisStatus</a>,<wbr><a href="no/fintlabs/ReconcileHandler.html" title="type parameter in ReconcileHandler">R</a> extends <a href="no/fintlabs/FlaisCrd.html" title="class in no.fintlabs">FlaisCrd</a>&lt;<a href="no/fintlabs/ReconcileHandler.html" title="type parameter in ReconcileHandler">T</a>&gt;,<wbr><a href="no/fintlabs/ReconcileHandler.html" title="type parameter in ReconcileHandler">T</a> extends <a href="no/fintlabs/FlaisSpec.html" title="interface in no.fintlabs">FlaisSpec</a>&gt; - Interface in <a href="no/fintlabs/package-summary.html">no.fintlabs</a></dt>
-<dd>
-<div class="block">FLAIS default reconcile behavior.</div>
-</dd>
 <dt><a href="no/fintlabs/FlaisResourceClassResolver.html#resolveCustomResourceClass(io.javaoperatorsdk.operator.api.reconciler.Reconciler)" class="member-name-link">resolveCustomResourceClass(Reconciler&lt;?&gt;)</a> - Method in class no.fintlabs.<a href="no/fintlabs/FlaisResourceClassResolver.html" title="class in no.fintlabs">FlaisResourceClassResolver</a></dt>
 <dd>&nbsp;</dd>
 </dl>
@@ -176,7 +172,7 @@ loadScripts(document, 'script');</script>
 <dl class="index">
 <dt><a href="no/fintlabs/FlaisReconiler.html#updateErrorStatus(T,io.javaoperatorsdk.operator.api.reconciler.Context,java.lang.Exception)" class="member-name-link">updateErrorStatus(T, Context&lt;T&gt;, Exception)</a> - Method in class no.fintlabs.<a href="no/fintlabs/FlaisReconiler.html" title="class in no.fintlabs">FlaisReconiler</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="no/fintlabs/ReconcileHandler.html#updateStatus(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult,R,S)" class="member-name-link">updateStatus(WorkflowReconcileResult, R, S)</a> - Method in interface no.fintlabs.<a href="no/fintlabs/ReconcileHandler.html" title="interface in no.fintlabs">ReconcileHandler</a></dt>
+<dt><a href="no/fintlabs/FlaisReconiler.html#updateStatus(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult,T,no.fintlabs.FlaisStatus)" class="member-name-link">updateStatus(WorkflowReconcileResult, T, FlaisStatus)</a> - Method in class no.fintlabs.<a href="no/fintlabs/FlaisReconiler.html" title="class in no.fintlabs">FlaisReconiler</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:V">V</h2>

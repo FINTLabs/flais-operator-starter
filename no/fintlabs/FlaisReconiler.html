@@ -80,12 +80,12 @@ loadScripts(document, 'script');</script>
 </dl>
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>io.javaoperatorsdk.operator.api.reconciler.Cleaner&lt;T&gt;</code>, <code>io.javaoperatorsdk.operator.api.reconciler.ErrorStatusHandler&lt;T&gt;</code>, <code>io.javaoperatorsdk.operator.api.reconciler.EventSourceInitializer&lt;T&gt;</code>, <code>io.javaoperatorsdk.operator.api.reconciler.Reconciler&lt;T&gt;</code>, <code><a href="ReconcileHandler.html" title="interface in no.fintlabs">ReconcileHandler</a>&lt;<a href="FlaisStatus.html" title="class in no.fintlabs">FlaisStatus</a>,<wbr>T,<wbr>S&gt;</code></dd>
+<dd><code>io.javaoperatorsdk.operator.api.reconciler.Cleaner&lt;T&gt;</code>, <code>io.javaoperatorsdk.operator.api.reconciler.ErrorStatusHandler&lt;T&gt;</code>, <code>io.javaoperatorsdk.operator.api.reconciler.EventSourceInitializer&lt;T&gt;</code>, <code>io.javaoperatorsdk.operator.api.reconciler.Reconciler&lt;T&gt;</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">FlaisReconiler&lt;T extends <a href="FlaisCrd.html" title="class in no.fintlabs">FlaisCrd</a>&lt;S&gt;,<wbr>S extends <a href="FlaisSpec.html" title="interface in no.fintlabs">FlaisSpec</a>&gt;</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements io.javaoperatorsdk.operator.api.reconciler.Reconciler&lt;T&gt;, io.javaoperatorsdk.operator.api.reconciler.Cleaner&lt;T&gt;, io.javaoperatorsdk.operator.api.reconciler.ErrorStatusHandler&lt;T&gt;, io.javaoperatorsdk.operator.api.reconciler.EventSourceInitializer&lt;T&gt;, <a href="ReconcileHandler.html" title="interface in no.fintlabs">ReconcileHandler</a>&lt;<a href="FlaisStatus.html" title="class in no.fintlabs">FlaisStatus</a>,<wbr>T,<wbr>S&gt;</span></div>
+implements io.javaoperatorsdk.operator.api.reconciler.Reconciler&lt;T&gt;, io.javaoperatorsdk.operator.api.reconciler.Cleaner&lt;T&gt;, io.javaoperatorsdk.operator.api.reconciler.ErrorStatusHandler&lt;T&gt;, io.javaoperatorsdk.operator.api.reconciler.EventSourceInitializer&lt;T&gt;</span></div>
 <div class="block">Extending this class will give you the default FLAIS reconiler behavior.</div>
 </section>
 <section class="summary">
@@ -120,17 +120,32 @@ implements io.javaoperatorsdk.operator.api.reconciler.Reconciler&lt;T&gt;, io.ja
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#cleanup(T,io.javaoperatorsdk.operator.api.reconciler.Context)" class="member-name-link">cleanup</a><wbr>(<a href="FlaisReconiler.html" title="type parameter in FlaisReconiler">T</a>&nbsp;resource,
  io.javaoperatorsdk.operator.api.reconciler.Context&lt;<a href="FlaisReconiler.html" title="type parameter in FlaisReconiler">T</a>&gt;&nbsp;context)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr>io.javaoperatorsdk.operator.processing.event.source.EventSource&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepareEventSources(io.javaoperatorsdk.operator.api.reconciler.EventSourceContext)" class="member-name-link">prepareEventSources</a><wbr>(io.javaoperatorsdk.operator.api.reconciler.EventSourceContext&lt;<a href="FlaisReconiler.html" title="type parameter in FlaisReconiler">T</a>&gt;&nbsp;context)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FlaisStatus.html" title="class in no.fintlabs">FlaisStatus</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createStatus(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult,no.fintlabs.FlaisStatus)" class="member-name-link">createStatus</a><wbr>(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult&nbsp;reconcile,
+ <a href="FlaisStatus.html" title="class in no.fintlabs">FlaisStatus</a>&nbsp;status)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>io.javaoperatorsdk.operator.api.reconciler.UpdateControl&lt;<a href="FlaisReconiler.html" title="type parameter in FlaisReconiler">T</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reconcile(T,io.javaoperatorsdk.operator.api.reconciler.Context)" class="member-name-link">reconcile</a><wbr>(<a href="FlaisReconiler.html" title="type parameter in FlaisReconiler">T</a>&nbsp;resource,
- io.javaoperatorsdk.operator.api.reconciler.Context&lt;<a href="FlaisReconiler.html" title="type parameter in FlaisReconiler">T</a>&gt;&nbsp;context)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasUpdates(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult)" class="member-name-link">hasUpdates</a><wbr>(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult&nbsp;reconcile)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>io.javaoperatorsdk.operator.api.reconciler.ErrorStatusUpdateControl&lt;<a href="FlaisReconiler.html" title="type parameter in FlaisReconiler">T</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateErrorStatus(T,io.javaoperatorsdk.operator.api.reconciler.Context,java.lang.Exception)" class="member-name-link">updateErrorStatus</a><wbr>(<a href="FlaisReconiler.html" title="type parameter in FlaisReconiler">T</a>&nbsp;resource,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCreated(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult)" class="member-name-link">isCreated</a><wbr>(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult&nbsp;reconcile)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr>io.javaoperatorsdk.operator.processing.event.source.EventSource&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepareEventSources(io.javaoperatorsdk.operator.api.reconciler.EventSourceContext)" class="member-name-link">prepareEventSources</a><wbr>(io.javaoperatorsdk.operator.api.reconciler.EventSourceContext&lt;<a href="FlaisReconiler.html" title="type parameter in FlaisReconiler">T</a>&gt;&nbsp;context)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>io.javaoperatorsdk.operator.api.reconciler.UpdateControl&lt;<a href="FlaisReconiler.html" title="type parameter in FlaisReconiler">T</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reconcile(T,io.javaoperatorsdk.operator.api.reconciler.Context)" class="member-name-link">reconcile</a><wbr>(<a href="FlaisReconiler.html" title="type parameter in FlaisReconiler">T</a>&nbsp;resource,
+ io.javaoperatorsdk.operator.api.reconciler.Context&lt;<a href="FlaisReconiler.html" title="type parameter in FlaisReconiler">T</a>&gt;&nbsp;context)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>io.javaoperatorsdk.operator.api.reconciler.ErrorStatusUpdateControl&lt;<a href="FlaisReconiler.html" title="type parameter in FlaisReconiler">T</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateErrorStatus(T,io.javaoperatorsdk.operator.api.reconciler.Context,java.lang.Exception)" class="member-name-link">updateErrorStatus</a><wbr>(<a href="FlaisReconiler.html" title="type parameter in FlaisReconiler">T</a>&nbsp;resource,
  io.javaoperatorsdk.operator.api.reconciler.Context&lt;<a href="FlaisReconiler.html" title="type parameter in FlaisReconiler">T</a>&gt;&nbsp;context,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a>&nbsp;e)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>io.javaoperatorsdk.operator.api.reconciler.UpdateControl&lt;<a href="FlaisReconiler.html" title="type parameter in FlaisReconiler">T</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateStatus(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult,T,no.fintlabs.FlaisStatus)" class="member-name-link">updateStatus</a><wbr>(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult&nbsp;reconcile,
+ <a href="FlaisReconiler.html" title="type parameter in FlaisReconiler">T</a>&nbsp;resource,
+ <a href="FlaisStatus.html" title="class in no.fintlabs">FlaisStatus</a>&nbsp;status)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -138,9 +153,6 @@ implements io.javaoperatorsdk.operator.api.reconciler.Reconciler&lt;T&gt;, io.ja
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
-<div class="inherited-list">
-<h3 id="methods-inherited-from-class-no.fintlabs.ReconcileHandler">Methods inherited from interface&nbsp;no.fintlabs.<a href="ReconcileHandler.html" title="interface in no.fintlabs">ReconcileHandler</a></h3>
-<code><a href="ReconcileHandler.html#createStatus(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult,S)">createStatus</a>, <a href="ReconcileHandler.html#hasUpdates(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult)">hasUpdates</a>, <a href="ReconcileHandler.html#isCreated(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult)">isCreated</a>, <a href="ReconcileHandler.html#updateStatus(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult,R,S)">updateStatus</a></code></div>
 </section>
 </li>
 </ul>
@@ -177,6 +189,33 @@ implements io.javaoperatorsdk.operator.api.reconciler.Reconciler&lt;T&gt;, io.ja
 <dt>Specified by:</dt>
 <dd><code>reconcile</code>&nbsp;in interface&nbsp;<code>io.javaoperatorsdk.operator.api.reconciler.Reconciler&lt;<a href="FlaisReconiler.html" title="type parameter in FlaisReconiler">T</a> extends <a href="FlaisCrd.html" title="class in no.fintlabs">FlaisCrd</a>&lt;<a href="FlaisReconiler.html" title="type parameter in FlaisReconiler">S</a>&gt;&gt;</code></dd>
 </dl>
+</section>
+</li>
+<li>
+<section class="detail" id="updateStatus(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult,T,no.fintlabs.FlaisStatus)">
+<h3 id="updateStatus(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult,no.fintlabs.FlaisCrd,no.fintlabs.FlaisStatus)">updateStatus</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">io.javaoperatorsdk.operator.api.reconciler.UpdateControl&lt;<a href="FlaisReconiler.html" title="type parameter in FlaisReconiler">T</a>&gt;</span>&nbsp;<span class="element-name">updateStatus</span><wbr><span class="parameters">(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult&nbsp;reconcile,
+ <a href="FlaisReconiler.html" title="type parameter in FlaisReconiler">T</a>&nbsp;resource,
+ <a href="FlaisStatus.html" title="class in no.fintlabs">FlaisStatus</a>&nbsp;status)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="hasUpdates(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult)">
+<h3>hasUpdates</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasUpdates</span><wbr><span class="parameters">(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult&nbsp;reconcile)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="isCreated(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult)">
+<h3>isCreated</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isCreated</span><wbr><span class="parameters">(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult&nbsp;reconcile)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="createStatus(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult,no.fintlabs.FlaisStatus)">
+<h3>createStatus</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FlaisStatus.html" title="class in no.fintlabs">FlaisStatus</a></span>&nbsp;<span class="element-name">createStatus</span><wbr><span class="parameters">(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult&nbsp;reconcile,
+ <a href="FlaisStatus.html" title="class in no.fintlabs">FlaisStatus</a>&nbsp;status)</span></div>
 </section>
 </li>
 <li>
