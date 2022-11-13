@@ -3,14 +3,15 @@ package no.fintlabs
 import no.fintlabs.testmodels.TestCrd
 import spock.lang.Specification
 
-class CrdValidatorSpec extends Specification {
+class LabelValidatorSpec extends Specification {
     def validLabels = [
             "app.kubernetes.io/name"     : "name",
             "app.kubernetes.io/instance" : "instance",
             "app.kubernetes.io/version"  : "version",
             "app.kubernetes.io/component": "component",
             "app.kubernetes.io/part-of"  : "part-of",
-            "fintlabs.no/team"           : "team"
+            "fintlabs.no/team"           : "team",
+            "fintlabs.no/org-id"         : "org-id"
     ]
 
     def notValidLabels = [
@@ -26,7 +27,7 @@ class CrdValidatorSpec extends Specification {
         crd.getMetadata().getLabels().putAll(validLabels)
 
         when:
-        CrdValidator.validate(crd)
+        LabelValidator.validate(crd)
 
         then:
         notThrown(IllegalArgumentException)
@@ -38,7 +39,7 @@ class CrdValidatorSpec extends Specification {
         crd.getMetadata().getLabels().putAll(notValidLabels)
 
         when:
-        CrdValidator.validate(crd)
+        LabelValidator.validate(crd)
 
         then:
         thrown(IllegalArgumentException)

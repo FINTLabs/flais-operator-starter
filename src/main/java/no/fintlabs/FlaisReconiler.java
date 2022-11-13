@@ -44,7 +44,7 @@ public abstract class FlaisReconiler<T extends FlaisCrd<S>, S extends FlaisSpec>
     public UpdateControl<T> reconcile(T resource,
                                       Context<T> context) {
 
-        CrdValidator.validate(resource);
+        LabelValidator.validate(resource);
 
         Workflow<T> fileShareWorkflow = workflow.build();
         log.debug("Reconciling {} dependent resources", fileShareWorkflow.getDependentResources().size());

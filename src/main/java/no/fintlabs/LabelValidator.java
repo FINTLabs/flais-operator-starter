@@ -11,7 +11,7 @@ import java.util.List;
  * Utility class to use for validating FLAIS mandatory CRD setup.
  */
 @Slf4j
-public class CrdValidator {
+public class LabelValidator {
 
     /**
      * List of mandatory labels.
@@ -22,7 +22,8 @@ public class CrdValidator {
             "app.kubernetes.io/version",
             "app.kubernetes.io/component",
             "app.kubernetes.io/part-of",
-            "fintlabs.no/team");
+            "fintlabs.no/team",
+            "fintlabs.no/org-id");
 
     /**
      * Checks if the CRD has all the mandatory labels set.
