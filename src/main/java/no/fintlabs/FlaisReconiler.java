@@ -10,9 +10,9 @@ import io.javaoperatorsdk.operator.processing.event.source.EventSource;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 /**
  * Extending this class will give you the default FLAIS reconiler behavior.
@@ -106,13 +106,11 @@ public abstract class FlaisReconiler<T extends FlaisCrd<S>, S extends FlaisSpec>
 
     @Override
     public Map<String, EventSource> prepareEventSources(EventSourceContext<T> context) {
-        EventSource[] eventSources = eventSourceProviders
-                .stream()
-                .map(dr -> dr.eventSource(context))
-                // TODO: 10/11/2022 Improve exception handling
-                .map(Optional::orElseThrow)
-                .toArray(EventSource[]::new);
-        return EventSourceInitializer.nameEventSources(eventSources);
+        Map<String, EventSource> eventSources = new HashMap<>(eventSourceProviders.size());
+        eventSourceProviders
+                .forEach(dependentResource -> eventSources.put(dependentResource.getClass().getSimpleName(), dependentResource.eventSource(context).orElseThrow()));
+
+        return eventSources;
     }
 
 
