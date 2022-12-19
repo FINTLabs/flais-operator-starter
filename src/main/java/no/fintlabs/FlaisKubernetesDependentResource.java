@@ -4,6 +4,7 @@ import io.fabric8.kubernetes.api.model.HasMetadata;
 import io.fabric8.kubernetes.client.KubernetesClient;
 import io.javaoperatorsdk.operator.api.reconciler.dependent.DependentResource;
 import io.javaoperatorsdk.operator.processing.dependent.kubernetes.CRUDKubernetesDependentResource;
+import io.javaoperatorsdk.operator.processing.dependent.kubernetes.KubernetesDependentResourceConfig;
 
 /**
  * Represents a Kubernetes object.
@@ -28,6 +29,14 @@ public abstract class FlaisKubernetesDependentResource<T extends HasMetadata, C 
     @SuppressWarnings({"rawtypes"})
     public void dependsOn(DependentResource... dependentResources) {
         workflow.dependsOn(dependentResources);
+    }
+
+    public void setManagedByLabelSelectorValue(String value) {
+
+        configureWith(
+                new KubernetesDependentResourceConfig<T>()
+                        .setLabelSelector("app.kubernetes.io/managed-by=" + value)
+        );
     }
 
 }
