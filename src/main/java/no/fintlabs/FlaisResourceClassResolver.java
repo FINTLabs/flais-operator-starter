@@ -18,7 +18,7 @@ import java.util.Arrays;
  * If flais.operator.resolve-crd-class-strategy has any other value than FLAIS the default resolver will be used.
  */
 @Component
-@ConditionalOnProperty(havingValue = "flais.operator.resolve-crd-class-strategy", value = "FLAIS", matchIfMissing = true)
+@ConditionalOnProperty(prefix = "flais.operator", name = "resolve-crd-class-strategy", havingValue = "FLAIS", matchIfMissing = true)
 public class FlaisResourceClassResolver implements ResourceClassResolver {
 
     @Override
