@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="script.js"></script>
-<script type="text/javascript" src="script-dir/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="script-dir/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="index-page">
@@ -63,10 +63,16 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:D">D</h2>
 <dl class="index">
+<dt><a href="no/fintlabs/DefaultCondition.html" class="type-name-link" title="class in no.fintlabs">DefaultCondition</a>&lt;<a href="no/fintlabs/DefaultCondition.html" title="type parameter in DefaultCondition">T</a>,<wbr><a href="no/fintlabs/DefaultCondition.html" title="type parameter in DefaultCondition">P</a> extends io.fabric8.kubernetes.api.model.HasMetadata&gt; - Class in <a href="no/fintlabs/package-summary.html">no.fintlabs</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="no/fintlabs/DefaultCondition.html#%3Cinit%3E()" class="member-name-link">DefaultCondition()</a> - Constructor for class no.fintlabs.<a href="no/fintlabs/DefaultCondition.html" title="class in no.fintlabs">DefaultCondition</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="no/fintlabs/FlaisExternalDependentResource.html#dependsOn(io.javaoperatorsdk.operator.api.reconciler.dependent.DependentResource...)" class="member-name-link">dependsOn(DependentResource...)</a> - Method in class no.fintlabs.<a href="no/fintlabs/FlaisExternalDependentResource.html" title="class in no.fintlabs">FlaisExternalDependentResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="no/fintlabs/FlaisKubernetesDependentResource.html#dependsOn(io.javaoperatorsdk.operator.api.reconciler.dependent.DependentResource...)" class="member-name-link">dependsOn(DependentResource...)</a> - Method in class no.fintlabs.<a href="no/fintlabs/FlaisKubernetesDependentResource.html" title="class in no.fintlabs">FlaisKubernetesDependentResource</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">If the dependent resource depends on other dependent resources you can add a list of dependent resources here.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:F">F</h2>
 <dl class="index">
@@ -87,6 +93,8 @@ loadScripts(document, 'script');</script>
 <div class="block">Represents a Kubernetes object.</div>
 </dd>
 <dt><a href="no/fintlabs/FlaisKubernetesDependentResource.html#%3Cinit%3E(java.lang.Class,no.fintlabs.FlaisWorkflow,io.fabric8.kubernetes.client.KubernetesClient)" class="member-name-link">FlaisKubernetesDependentResource(Class&lt;T&gt;, FlaisWorkflow&lt;C, S&gt;, KubernetesClient)</a> - Constructor for class no.fintlabs.<a href="no/fintlabs/FlaisKubernetesDependentResource.html" title="class in no.fintlabs">FlaisKubernetesDependentResource</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="no/fintlabs/FlaisKubernetesDependentResource.html#%3Cinit%3E(java.lang.Class,no.fintlabs.FlaisWorkflow,io.javaoperatorsdk.operator.processing.dependent.workflow.Condition,io.fabric8.kubernetes.client.KubernetesClient)" class="member-name-link">FlaisKubernetesDependentResource(Class&lt;T&gt;, FlaisWorkflow&lt;C, S&gt;, Condition&lt;T, C&gt;, KubernetesClient)</a> - Constructor for class no.fintlabs.<a href="no/fintlabs/FlaisKubernetesDependentResource.html" title="class in no.fintlabs">FlaisKubernetesDependentResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="no/fintlabs/FlaisReconiler.html" class="type-name-link" title="class in no.fintlabs">FlaisReconiler</a>&lt;<a href="no/fintlabs/FlaisReconiler.html" title="type parameter in FlaisReconiler">T</a> extends <a href="no/fintlabs/FlaisCrd.html" title="class in no.fintlabs">FlaisCrd</a>&lt;<a href="no/fintlabs/FlaisReconiler.html" title="type parameter in FlaisReconiler">S</a>&gt;,<wbr><a href="no/fintlabs/FlaisReconiler.html" title="type parameter in FlaisReconiler">S</a> extends <a href="no/fintlabs/FlaisSpec.html" title="interface in no.fintlabs">FlaisSpec</a>&gt; - Class in <a href="no/fintlabs/package-summary.html">no.fintlabs</a></dt>
 <dd>
@@ -125,6 +133,10 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="no/fintlabs/MetadataUtils.html#getOrgId(io.fabric8.kubernetes.api.model.HasMetadata)" class="member-name-link">getOrgId(HasMetadata)</a> - Static method in class no.fintlabs.<a href="no/fintlabs/MetadataUtils.html" title="class in no.fintlabs">MetadataUtils</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="no/fintlabs/FlaisResourceClassResolver.html#getResourceClass(java.lang.Class)" class="member-name-link">getResourceClass(Class&lt;? extends Reconciler&lt;R&gt;&gt;)</a> - Method in class no.fintlabs.<a href="no/fintlabs/FlaisResourceClassResolver.html" title="class in no.fintlabs">FlaisResourceClassResolver</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="no/fintlabs/HasSecret.html#getSecretName(io.fabric8.kubernetes.api.model.HasMetadata)" class="member-name-link">getSecretName(HasMetadata)</a> - Method in interface no.fintlabs.<a href="no/fintlabs/HasSecret.html" title="interface in no.fintlabs">HasSecret</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="no/fintlabs/MetadataUtils.html#getStorageAccountName(io.fabric8.kubernetes.api.model.HasMetadata)" class="member-name-link">getStorageAccountName(HasMetadata)</a> - Static method in class no.fintlabs.<a href="no/fintlabs/MetadataUtils.html" title="class in no.fintlabs">MetadataUtils</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="no/fintlabs/MetadataUtils.html#getTeam(io.fabric8.kubernetes.api.model.HasMetadata)" class="member-name-link">getTeam(HasMetadata)</a> - Static method in class no.fintlabs.<a href="no/fintlabs/MetadataUtils.html" title="class in no.fintlabs">MetadataUtils</a></dt>
@@ -132,6 +144,10 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:H">H</h2>
 <dl class="index">
+<dt><a href="no/fintlabs/HasSecret.html#hasSecret()" class="member-name-link">hasSecret()</a> - Method in interface no.fintlabs.<a href="no/fintlabs/HasSecret.html" title="interface in no.fintlabs">HasSecret</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="no/fintlabs/HasSecret.html" class="type-name-link" title="interface in no.fintlabs">HasSecret</a>&lt;<a href="no/fintlabs/HasSecret.html" title="type parameter in HasSecret">P</a> extends <a href="no/fintlabs/FlaisCrd.html" title="class in no.fintlabs">FlaisCrd</a>&lt;<a href="no/fintlabs/HasSecret.html" title="type parameter in HasSecret">S</a>&gt;,<wbr><a href="no/fintlabs/HasSecret.html" title="type parameter in HasSecret">S</a> extends <a href="no/fintlabs/FlaisSpec.html" title="interface in no.fintlabs">FlaisSpec</a>&gt; - Interface in <a href="no/fintlabs/package-summary.html">no.fintlabs</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="no/fintlabs/FlaisReconiler.html#hasUpdates(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult)" class="member-name-link">hasUpdates(WorkflowReconcileResult)</a> - Method in class no.fintlabs.<a href="no/fintlabs/FlaisReconiler.html" title="class in no.fintlabs">FlaisReconiler</a></dt>
 <dd>&nbsp;</dd>
 </dl>
@@ -140,6 +156,8 @@ loadScripts(document, 'script');</script>
 <dt><a href="no/fintlabs/FlaisCrd.html#initStatus()" class="member-name-link">initStatus()</a> - Method in class no.fintlabs.<a href="no/fintlabs/FlaisCrd.html" title="class in no.fintlabs">FlaisCrd</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="no/fintlabs/FlaisReconiler.html#isCreated(io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowReconcileResult)" class="member-name-link">isCreated(WorkflowReconcileResult)</a> - Method in class no.fintlabs.<a href="no/fintlabs/FlaisReconiler.html" title="class in no.fintlabs">FlaisReconiler</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="no/fintlabs/DefaultCondition.html#isMet(P,T,io.javaoperatorsdk.operator.api.reconciler.Context)" class="member-name-link">isMet(P, T, Context&lt;P&gt;)</a> - Method in class no.fintlabs.<a href="no/fintlabs/DefaultCondition.html" title="class in no.fintlabs">DefaultCondition</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:L">L</h2>
@@ -180,14 +198,14 @@ loadScripts(document, 'script');</script>
 <dl class="index">
 <dt><a href="no/fintlabs/FlaisReconiler.html#reconcile(T,io.javaoperatorsdk.operator.api.reconciler.Context)" class="member-name-link">reconcile(T, Context&lt;T&gt;)</a> - Method in class no.fintlabs.<a href="no/fintlabs/FlaisReconiler.html" title="class in no.fintlabs">FlaisReconiler</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="no/fintlabs/FlaisResourceClassResolver.html#resolveCustomResourceClass(io.javaoperatorsdk.operator.api.reconciler.Reconciler)" class="member-name-link">resolveCustomResourceClass(Reconciler&lt;?&gt;)</a> - Method in class no.fintlabs.<a href="no/fintlabs/FlaisResourceClassResolver.html" title="class in no.fintlabs">FlaisResourceClassResolver</a></dt>
-<dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:S">S</h2>
 <dl class="index">
 <dt><a href="no/fintlabs/FlaisStatus.html#setDependentResourceStatus(java.util.List)" class="member-name-link">setDependentResourceStatus(List&lt;String&gt;)</a> - Method in class no.fintlabs.<a href="no/fintlabs/FlaisStatus.html" title="class in no.fintlabs">FlaisStatus</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="no/fintlabs/FlaisStatus.html#setErrorMessage(java.lang.String)" class="member-name-link">setErrorMessage(String)</a> - Method in class no.fintlabs.<a href="no/fintlabs/FlaisStatus.html" title="class in no.fintlabs">FlaisStatus</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="no/fintlabs/HasSecret.html#shouldBeIncluded(P)" class="member-name-link">shouldBeIncluded(P)</a> - Method in interface no.fintlabs.<a href="no/fintlabs/HasSecret.html" title="interface in no.fintlabs">HasSecret</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:U">U</h2>

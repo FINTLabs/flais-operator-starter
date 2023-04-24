@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../../script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../script.js"></script>
-<script type="text/javascript" src="../../script-dir/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../script-dir/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
@@ -89,11 +89,12 @@ loadScripts(document, 'script');</script>
 </dl>
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>io.javaoperatorsdk.operator.api.reconciler.dependent.Deleter&lt;C&gt;</code>, <code>io.javaoperatorsdk.operator.api.reconciler.dependent.DependentResource&lt;T,<wbr>C&gt;</code>, <code>io.javaoperatorsdk.operator.api.reconciler.dependent.EventSourceReferencer&lt;C&gt;</code>, <code>io.javaoperatorsdk.operator.api.reconciler.dependent.GarbageCollected&lt;C&gt;</code>, <code>io.javaoperatorsdk.operator.api.reconciler.dependent.managed.AnnotationDependentResourceConfigurator&lt;io.javaoperatorsdk.operator.processing.dependent.kubernetes.KubernetesDependent,<wbr>io.javaoperatorsdk.operator.processing.dependent.kubernetes.KubernetesDependentResourceConfig&lt;T&gt;&gt;</code>, <code>io.javaoperatorsdk.operator.api.reconciler.dependent.managed.DependentResourceConfigurator&lt;io.javaoperatorsdk.operator.processing.dependent.kubernetes.KubernetesDependentResourceConfig&lt;T&gt;&gt;</code>, <code>io.javaoperatorsdk.operator.api.reconciler.dependent.managed.KubernetesClientAware</code>, <code>io.javaoperatorsdk.operator.processing.dependent.Creator&lt;T,<wbr>C&gt;</code>, <code>io.javaoperatorsdk.operator.processing.dependent.Updater&lt;T,<wbr>C&gt;</code></dd>
+<dd><code>io.javaoperatorsdk.operator.api.reconciler.dependent.Deleter&lt;C&gt;</code>, <code>io.javaoperatorsdk.operator.api.reconciler.dependent.DependentResource&lt;T,<wbr>C&gt;</code>, <code>io.javaoperatorsdk.operator.api.reconciler.dependent.EventSourceReferencer&lt;C&gt;</code>, <code>io.javaoperatorsdk.operator.api.reconciler.dependent.GarbageCollected&lt;C&gt;</code>, <code>io.javaoperatorsdk.operator.api.reconciler.dependent.managed.DependentResourceConfigurator&lt;io.javaoperatorsdk.operator.processing.dependent.kubernetes.KubernetesDependentResourceConfig&lt;T&gt;&gt;</code>, <code>io.javaoperatorsdk.operator.api.reconciler.dependent.managed.KubernetesClientAware</code>, <code>io.javaoperatorsdk.operator.processing.dependent.Creator&lt;T,<wbr>C&gt;</code>, <code>io.javaoperatorsdk.operator.processing.dependent.Updater&lt;T,<wbr>C&gt;</code>, <code><a href="HasSecret.html" title="interface in no.fintlabs">HasSecret</a>&lt;C,<wbr>S&gt;</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">FlaisKubernetesDependentResource&lt;T extends io.fabric8.kubernetes.api.model.HasMetadata,<wbr>C extends <a href="FlaisCrd.html" title="class in no.fintlabs">FlaisCrd</a>&lt;S&gt;,<wbr>S extends <a href="FlaisSpec.html" title="interface in no.fintlabs">FlaisSpec</a>&gt;</span>
-<span class="extends-implements">extends io.javaoperatorsdk.operator.processing.dependent.kubernetes.CRUDKubernetesDependentResource&lt;T,<wbr>C&gt;</span></div>
+<span class="extends-implements">extends io.javaoperatorsdk.operator.processing.dependent.kubernetes.CRUDKubernetesDependentResource&lt;T,<wbr>C&gt;
+implements <a href="HasSecret.html" title="interface in no.fintlabs">HasSecret</a>&lt;C,<wbr>S&gt;</span></div>
 <div class="block">Represents a Kubernetes object.
  <p>
  If this resource is dependent of any other dependent resources you should call <code>dependsOn</code> in the constructor.</div>
@@ -127,6 +128,11 @@ loadScripts(document, 'script');</script>
  <a href="FlaisWorkflow.html" title="class in no.fintlabs">FlaisWorkflow</a>&lt;<a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">C</a>,<wbr><a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">S</a>&gt;&nbsp;workflow,
  io.fabric8.kubernetes.client.KubernetesClient&nbsp;kubernetesClient)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.Class,no.fintlabs.FlaisWorkflow,io.javaoperatorsdk.operator.processing.dependent.workflow.Condition,io.fabric8.kubernetes.client.KubernetesClient)" class="member-name-link">FlaisKubernetesDependentResource</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;<a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">T</a>&gt;&nbsp;resourceType,
+ <a href="FlaisWorkflow.html" title="class in no.fintlabs">FlaisWorkflow</a>&lt;<a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">C</a>,<wbr><a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">S</a>&gt;&nbsp;workflow,
+ io.javaoperatorsdk.operator.processing.dependent.workflow.Condition&lt;<a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">T</a>,<wbr><a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">C</a>&gt;&nbsp;condition,
+ io.fabric8.kubernetes.client.KubernetesClient&nbsp;kubernetesClient)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -143,13 +149,15 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#dependsOn(io.javaoperatorsdk.operator.api.reconciler.dependent.DependentResource...)" class="member-name-link">dependsOn</a><wbr>(io.javaoperatorsdk.operator.api.reconciler.dependent.DependentResource...&nbsp;dependentResources)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">If the dependent resource depends on other dependent resources you can add a list of dependent resources here.</div>
+</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-io.javaoperatorsdk.operator.processing.dependent.kubernetes.KubernetesDependentResource">Methods inherited from class&nbsp;io.javaoperatorsdk.operator.processing.dependent.kubernetes.KubernetesDependentResource</h3>
-<code>addOwnerReference, configFrom, configuration, configureWith, configureWith, create, createEventSource, deleteTargetResource, desired, getKubernetesClient, handleCreate, handleDelete, handleUpdate, match, match, prepare, setKubernetesClient, update</code></div>
+<code>addOwnerReference, configuration, configureWith, configureWith, create, createEventSource, deleteTargetResource, desired, getKubernetesClient, handleCreate, handleDelete, handleUpdate, isDeletable, match, match, prepare, setKubernetesClient, update</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-io.javaoperatorsdk.operator.processing.dependent.AbstractEventSourceHolderDependentResource">Methods inherited from class&nbsp;io.javaoperatorsdk.operator.processing.dependent.AbstractEventSourceHolderDependentResource</h3>
 <code>applyFilters, eventSource, eventSource, initEventSource, onCreated, onUpdated, resolveEventSource, resourceType, setEventSource, setOnAddFilter, setOnDeleteFilter, setOnUpdateFilter, useEventSourceWithName</code></div>
@@ -166,6 +174,9 @@ loadScripts(document, 'script');</script>
 <h3 id="methods-inherited-from-class-io.javaoperatorsdk.operator.api.reconciler.dependent.Deleter">Methods inherited from interface&nbsp;io.javaoperatorsdk.operator.api.reconciler.dependent.Deleter</h3>
 <code>delete</code></div>
 <div class="inherited-list">
+<h3 id="methods-inherited-from-class-no.fintlabs.HasSecret">Methods inherited from interface&nbsp;no.fintlabs.<a href="HasSecret.html" title="interface in no.fintlabs">HasSecret</a></h3>
+<code><a href="HasSecret.html#getSecretName(io.fabric8.kubernetes.api.model.HasMetadata)">getSecretName</a>, <a href="HasSecret.html#hasSecret()">hasSecret</a>, <a href="HasSecret.html#shouldBeIncluded(P)">shouldBeIncluded</a></code></div>
+<div class="inherited-list">
 <h3 id="methods-inherited-from-class-io.javaoperatorsdk.operator.processing.dependent.Updater">Methods inherited from interface&nbsp;io.javaoperatorsdk.operator.processing.dependent.Updater</h3>
 <code>match, update</code></div>
 </section>
@@ -179,6 +190,15 @@ loadScripts(document, 'script');</script>
 <section class="constructor-details" id="constructor-detail">
 <h2>Constructor Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="&lt;init&gt;(java.lang.Class,no.fintlabs.FlaisWorkflow,io.javaoperatorsdk.operator.processing.dependent.workflow.Condition,io.fabric8.kubernetes.client.KubernetesClient)">
+<h3>FlaisKubernetesDependentResource</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">FlaisKubernetesDependentResource</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;<a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">T</a>&gt;&nbsp;resourceType,
+ <a href="FlaisWorkflow.html" title="class in no.fintlabs">FlaisWorkflow</a>&lt;<a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">C</a>,<wbr><a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">S</a>&gt;&nbsp;workflow,
+ io.javaoperatorsdk.operator.processing.dependent.workflow.Condition&lt;<a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">T</a>,<wbr><a href="FlaisKubernetesDependentResource.html" title="type parameter in FlaisKubernetesDependentResource">C</a>&gt;&nbsp;condition,
+ io.fabric8.kubernetes.client.KubernetesClient&nbsp;kubernetesClient)</span></div>
+</section>
+</li>
 <li>
 <section class="detail" id="&lt;init&gt;(java.lang.Class,no.fintlabs.FlaisWorkflow,io.fabric8.kubernetes.client.KubernetesClient)">
 <h3>FlaisKubernetesDependentResource</h3>
@@ -199,6 +219,27 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="dependsOn(io.javaoperatorsdk.operator.api.reconciler.dependent.DependentResource...)">
 <h3>dependsOn</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">dependsOn</span><wbr><span class="parameters">(io.javaoperatorsdk.operator.api.reconciler.dependent.DependentResource...&nbsp;dependentResources)</span></div>
+<div class="block">If the dependent resource depends on other dependent resources you can add a list of dependent resources here.
+ <p>
+ You typically inject the resources you depend on in the constructor and add them with this method.
+ <pre>
+ <code>@Slf4j</code>
+ <code>@Component </code>
+ public class FintClientSecretDependentResource
+         extends FlaisKubernetesDependentResource&lt;Secret, FintClientCrd, FintClientSpec> {
+ *
+     public FintClientSecretDependentResource(..., FintClientDependentResource fintClientDependentResource, ...) {
+
+         super(Secret.class, workflow, kubernetesClient);
+         dependsOn(fintClientDependentResource);
+         ...
+         );
+     }
+ </pre></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>dependentResources</code> - A list of dependent resources.</dd>
+</dl>
 </section>
 </li>
 </ul>

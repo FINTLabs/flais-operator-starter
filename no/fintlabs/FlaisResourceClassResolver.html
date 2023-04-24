@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../../script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../script.js"></script>
-<script type="text/javascript" src="../../script-dir/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../script-dir/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
@@ -75,7 +75,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code>io.javaoperatorsdk.operator.springboot.starter.ResourceClassResolver</code></dd>
+<dd><code>io.javaoperatorsdk.operator.api.config.ResourceClassResolver</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="annotations">@Component
@@ -85,7 +85,7 @@ loadScripts(document, 'script');</script>
                        matchIfMissing=true)
 </span><span class="modifiers">public class </span><span class="element-name type-name-label">FlaisResourceClassResolver</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements io.javaoperatorsdk.operator.springboot.starter.ResourceClassResolver</span></div>
+implements io.javaoperatorsdk.operator.api.config.ResourceClassResolver</span></div>
 <div class="block">Since our Reconciler is inhereting an abstract class we need to write our own resolver.
  See <a href="https://github.com/java-operator-sdk/operator-framework-spring-boot-starter/blob/main/starter/src/main/java/io/javaoperatorsdk/operator/springboot/starter/NaiveResourceClassResolver.java">NaiveResourceClassResolver.class</a>
  and <a href="https://github.com/java-operator-sdk/operator-framework-spring-boot-starter/blob/da11ad911a6af0243225969f95445373f961fce9/starter/src/main/java/io/javaoperatorsdk/operator/springboot/starter/OperatorAutoConfiguration.java#L102">OperatorAutoConfiguration.java</a>
@@ -119,9 +119,8 @@ implements io.javaoperatorsdk.operator.springboot.starter.ResourceClassResolver<
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;R extends io.fabric8.kubernetes.client.CustomResource&lt;?,<wbr>
-?&gt;&gt;<br><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;R&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveCustomResourceClass(io.javaoperatorsdk.operator.api.reconciler.Reconciler)" class="member-name-link">resolveCustomResourceClass</a><wbr>(io.javaoperatorsdk.operator.api.reconciler.Reconciler&lt;?&gt;&nbsp;reconciler)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;R extends io.fabric8.kubernetes.api.model.HasMetadata&gt;<br><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;R&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResourceClass(java.lang.Class)" class="member-name-link">getResourceClass</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends io.javaoperatorsdk.operator.api.reconciler.Reconciler&lt;R&gt;&gt;&nbsp;reconcilerClass)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -155,14 +154,13 @@ implements io.javaoperatorsdk.operator.springboot.starter.ResourceClassResolver<
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="resolveCustomResourceClass(io.javaoperatorsdk.operator.api.reconciler.Reconciler)">
-<h3>resolveCustomResourceClass</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters-long">&lt;R extends io.fabric8.kubernetes.client.CustomResource&lt;?,<wbr>
-?&gt;&gt;</span>
-<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;R&gt;</span>&nbsp;<span class="element-name">resolveCustomResourceClass</span><wbr><span class="parameters">(io.javaoperatorsdk.operator.api.reconciler.Reconciler&lt;?&gt;&nbsp;reconciler)</span></div>
+<section class="detail" id="getResourceClass(java.lang.Class)">
+<h3>getResourceClass</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters-long">&lt;R extends io.fabric8.kubernetes.api.model.HasMetadata&gt;</span>
+<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;R&gt;</span>&nbsp;<span class="element-name">getResourceClass</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends io.javaoperatorsdk.operator.api.reconciler.Reconciler&lt;R&gt;&gt;&nbsp;reconcilerClass)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code>resolveCustomResourceClass</code>&nbsp;in interface&nbsp;<code>io.javaoperatorsdk.operator.springboot.starter.ResourceClassResolver</code></dd>
+<dd><code>getResourceClass</code>&nbsp;in interface&nbsp;<code>io.javaoperatorsdk.operator.api.config.ResourceClassResolver</code></dd>
 </dl>
 </section>
 </li>
