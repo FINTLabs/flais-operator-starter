@@ -1,8 +1,8 @@
 package no.fintlabs;
 
-import io.fabric8.kubernetes.client.CustomResource;
+import io.fabric8.kubernetes.api.model.HasMetadata;
+import io.javaoperatorsdk.operator.api.config.ResourceClassResolver;
 import io.javaoperatorsdk.operator.api.reconciler.Reconciler;
-import io.javaoperatorsdk.operator.springboot.starter.ResourceClassResolver;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.core.ResolvableType;
 import org.springframework.stereotype.Component;
@@ -21,11 +21,23 @@ import java.util.Arrays;
 @ConditionalOnProperty(prefix = "flais.operator", name = "resolve-crd-class-strategy", havingValue = "FLAIS", matchIfMissing = true)
 public class FlaisResourceClassResolver implements ResourceClassResolver {
 
+//    @Override
+//    @SuppressWarnings("unchecked")
+//    public <R extends CustomResource<?, ?>> Class<R> resolveCustomResourceClass(Reconciler<?> reconciler) {
+//
+//        final var type = ResolvableType.forClass(reconciler.getClass());
+//
+//        return (Class<R>) Arrays.stream(type.getSuperType().getInterfaces())
+//                .filter(resolvableType -> resolvableType.toClass().getCanonicalName().equals(Reconciler.class.getCanonicalName()))
+//                .findAny()
+//                .orElseThrow(() -> new IllegalArgumentException(type.getType().getTypeName() + " does not implement Reconciler<T> interface"))
+//                .resolveGeneric(0);
+//    }
+
     @Override
     @SuppressWarnings("unchecked")
-    public <R extends CustomResource<?, ?>> Class<R> resolveCustomResourceClass(Reconciler<?> reconciler) {
-
-        final var type = ResolvableType.forClass(reconciler.getClass());
+    public <R extends HasMetadata> Class<R> getResourceClass(Class<? extends Reconciler<R>> reconcilerClass) {
+        final var type = ResolvableType.forClass(reconcilerClass);
 
         return (Class<R>) Arrays.stream(type.getSuperType().getInterfaces())
                 .filter(resolvableType -> resolvableType.toClass().getCanonicalName().equals(Reconciler.class.getCanonicalName()))

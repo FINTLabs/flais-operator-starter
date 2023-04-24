@@ -1,6 +1,7 @@
 package no.fintlabs;
 
-import io.javaoperatorsdk.operator.processing.dependent.workflow.builder.WorkflowBuilder;
+
+import io.javaoperatorsdk.operator.processing.dependent.workflow.WorkflowBuilder;
 
 /**
  * FLAIS workflow.

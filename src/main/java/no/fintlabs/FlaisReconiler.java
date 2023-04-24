@@ -47,7 +47,7 @@ public abstract class FlaisReconiler<T extends FlaisCrd<S>, S extends FlaisSpec>
         LabelValidator.validate(resource);
 
         Workflow<T> fileShareWorkflow = workflow.build();
-        log.debug("Reconciling {} dependent resources", fileShareWorkflow.getDependentResources().size());
+        log.debug("Reconciling {} dependent resources", fileShareWorkflow.getDependentResourcesByName().size());
         WorkflowReconcileResult reconcile = fileShareWorkflow.reconcile(resource, context);
 
         return updateStatus(reconcile, resource, new FlaisStatus());

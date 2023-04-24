@@ -1,9 +1,7 @@
 package no.fintlabs
 
-
 import no.fintlabs.testmodels.TestCrd
 import no.fintlabs.testmodels.TestReconciler
-import no.fintlabs.testmodels.TestWorkflow
 import spock.lang.Specification
 
 class FlaisResourceClassResolverSpec extends Specification {
@@ -13,7 +11,7 @@ class FlaisResourceClassResolverSpec extends Specification {
         def resolver = new FlaisResourceClassResolver()
 
         when:
-        def clazz = resolver.resolveCustomResourceClass(new TestReconciler(new TestWorkflow(), [], []))
+        def clazz = resolver.getResourceClass(TestReconciler.class)
 
         then:
         clazz == TestCrd.class
