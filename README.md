@@ -91,7 +91,6 @@ public class FileShareDependentResource extends FlaisExternalDependentResource<F
         super(FileShare.class, workflow);
         this.fileShareService = fileShareService;
         setPollingPeriod(Duration.ofMinutes(10).toMillis());
-        dependsOn(someOtherDR);
     }
 
 
