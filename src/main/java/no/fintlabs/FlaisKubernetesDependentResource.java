@@ -6,6 +6,8 @@ import io.javaoperatorsdk.operator.api.reconciler.dependent.DependentResource;
 import io.javaoperatorsdk.operator.processing.dependent.kubernetes.CRUDKubernetesDependentResource;
 import io.javaoperatorsdk.operator.processing.dependent.workflow.Condition;
 
+import java.util.Base64;
+
 /**
  * Represents a Kubernetes object.
  * <p>
@@ -65,6 +67,23 @@ public abstract class FlaisKubernetesDependentResource<T extends HasMetadata, C 
         workflow.dependsOn(dependentResources);
     }
 
+    /**
+     * Helper method to Base64 encode secrets
+     * @param value The value to encode
+     * @return The encoded string
+     */
+    public String encode(String value) {
+        return Base64.getEncoder().encodeToString(value.getBytes());
+    }
+
+    /**
+     * Helper method to Base64 decode secrets
+     * @param value the value to decode
+     * @return The decoded string
+     */
+    public String decode(String value) {
+        return new String(Base64.getDecoder().decode(value.getBytes()));
+    }
 
 //    /**
 //     * If you want the dependent resource to only be created on a specific condition you can use this method to add

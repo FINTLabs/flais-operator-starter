@@ -121,13 +121,17 @@ public class FileShareDependentResource extends FlaisExternalDependentResource<F
 
 ````java
 @Component
-@KubernetesDependent(labelSelector = "app.kubernetes.io/managed-by=flaiserator")
 public class FileShareSecretDependentResource extends FlaisKubernetesDependentResource<Secret, FileShareCrd, FileShareSpec> {
 
     public FileShareSecretDependentResource(FlaisWorkflow<FileShareCrd, FileShareSpec> workflow, FileShareDependentResource fileShareDependentResource, KubernetesClient kubernetesClient) {
 
         super(Secret.class, workflow, kubernetesClient);
         dependsOn(fileShareDependentResource);
+
+        configureWith(
+                new KubernetesDependentResourceConfig<Secret>()
+                        .setLabelSelector("app.kubernetes.io/managed-by=myoperator")
+        );
     }
 
     @Override
