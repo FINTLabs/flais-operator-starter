@@ -3,30 +3,29 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Publish to Reposilite
+name: legacy Publish to Reposilite
 
 on:
-  release:
-    types: [ published ]
+  workflow_dispatch:
 
 jobs:
   publish:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v7.0.1
       - name: Set version
         run: echo "RELEASE_VERSION=$(echo ${GITHUB_REF#refs/*/} | sed "s/^v//")" >> $GITHUB_ENV
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v6.3.0
         with:
           java-version: '17'
-          distribution: 'adopt'
+          distribution: 'temurin'
       - name: Gradle Wrapper Validation
-        uses: gradle/wrapper-validation-action@v1
+        uses: gradle/wrapper-validation-action@v1.1.0
 
       - name: Gradle Build Action
-        uses: gradle/gradle-build-action@v2.4.2
+        uses: gradle/gradle-build-action@v2.12.0
         with:
           arguments: |
             publish
