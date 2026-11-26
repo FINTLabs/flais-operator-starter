@@ -1,0 +1,9 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    exclude-paths:
+      - ".github/workflows/legacy-*"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
